@@ -62,7 +62,7 @@ document.body.appendChild(buttom);
 // import $ from "jquery"; //配置externals不会从package.json中安装依赖
 // console.log("$", window.$);
 
-// require("./index.css");
+require("./index.css");
 // require("@babel/polyfill"); //补丁转es7语法
 // @lccc
 // class AA {

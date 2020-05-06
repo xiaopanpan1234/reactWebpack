@@ -5,7 +5,7 @@ body {
 div {
   width: 100px;
   height: 100px;
-  background: url("../assets/ddone.jpeg");
+  background: url("../assets/ddone.jpeg") no-repeat center/100% 100%;
 }
 img {
   width: 300px;

@@ -8,7 +8,6 @@ module.exports = {
   output: {
     filename: "bundle.[hash:5].js",
     path: path.resolve(__dirname, "../build"),
-    // publicPath: "/",
   },
   // 1）。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。。
   plugins: [
@@ -67,8 +66,8 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 1,
-            outputPath: "img/",
-            publicPath: "./img",
+            outputPath: './img',
+            publicPath: "/img"
           },
         },
       },

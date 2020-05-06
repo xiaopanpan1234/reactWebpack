@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //分割css文件
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
@@ -31,10 +30,7 @@ module.exports = {
       Hash: true,
       // chunks: [], //当多页面的时候可以在数组内加要引入的js
     }),
-    new MiniCssExtractPlugin({
-      //从html中抽离出css作为一个单独的文件
-      filename: "css/main.css",
-    }),
+
     new webpack.ProvidePlugin({
       $: "jquery", //注入每个组件中
     }),
@@ -67,7 +63,7 @@ module.exports = {
           loader: "url-loader",
           options: {
             limit: 1,
-            outputPath: "img/",
+            outputPath: "./img",
             publicPath: "./img",
           },
         },
@@ -87,29 +83,6 @@ module.exports = {
             ],
           },
         },
-      },
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
-        // MiniCssExtractPlugin.loader 替换style-loader 使用link的方式加载到html中
-        // {
-        //  loader: 'style-loader',
-        //  options:{
-        //    insertAt:'top'
-        //  }
-        // }
-        //style-loader 把css插入到head标签中
-        //css-loader 解析@import这种语法的
-        //"postcss-loader" 加浏览器前缀
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "less-loader",
-        ],
       },
     ],
   },

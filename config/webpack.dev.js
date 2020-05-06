@@ -8,6 +8,37 @@ module.exports = smart(base, {
     open: true,
     hot: true,
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+            // options: {
+            //   insertAt: "top",
+            // },
+          },
+          "css-loader",
+          "postcss-loader",
+        ],
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader",
+            // options: {
+            //   insertAt: "top",
+            // },
+          },
+          "css-loader",
+          "postcss-loader",
+          "less-loader",
+        ],
+      },
+    ],
+  },
   plugins: [
     new webpack.NamedModulesPlugin(), //打印更新的模块路径
     new webpack.HotModuleReplacementPlugin(), //热更新插件

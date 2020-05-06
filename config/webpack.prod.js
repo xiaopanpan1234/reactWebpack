@@ -3,6 +3,8 @@ const base = require("./webpack.base");
 const webpack = require("webpack");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //压缩css文件
 const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //分割css文件
+
 module.exports = smart(base, {
   mode: "production",
   optimization: {
@@ -35,9 +37,43 @@ module.exports = smart(base, {
       },
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              // url: false,
+            },
+          },
+          "postcss-loader",
+        ],
+        // MiniCssExtractPlugin.loader 替换style-loader 使用link的方式加载到html中
+        //style-loader 把css插入到head标签中
+        //css-loader 解析@import这种语法的
+        //"postcss-loader" 加浏览器前缀
+      },
+      {
+        test: /\.less$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "less-loader",
+        ],
+      },
+    ],
+  },
   plugins: [
     new webpack.DefinePlugin({
       DEV: JSON.stringify("production"),
+    }),
+    new MiniCssExtractPlugin({
+      //从html中抽离出css作为一个单独的文件
+      filename: "css/main.css",
     }),
   ],
 });

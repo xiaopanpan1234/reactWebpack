@@ -1,0 +1,28 @@
+{
+  //   "presets": [
+  //     [
+  //       "@babel/preset-env",
+  //       {
+  //         "targets": {
+  //           "chrome": "67",
+  //           "ie": "9"
+  //         },
+  //         "useBuiltIns": "usage"
+  //       }
+  //     ],
+  //     "@babel/preset-react" //加入插件后可以使用react
+  //   ],
+  //   "plugins": [
+  //     "@babel/plugin-syntax-dynamic-import",
+  //     ["@babel/plugin-proposal-decorators", { "legacy": true }],
+  //     ["@babel/plugin-proposal-class-properties", { "loose": true }],
+  //     [
+  //       "import",
+  //       {
+  //         "libraryName": "antd",
+  //         "libraryDirectory": "es",
+  //         "style": true // or 'css' `style: true` 会加载 less 文件
+  //       }
+  //     ]
+  //   ]
+}

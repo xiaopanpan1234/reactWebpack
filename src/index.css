@@ -1,0 +1,12 @@
+body {
+  background: red;
+  /* transform: rotate(45deg); */
+}
+div {
+  width: 100px;
+  height: 100px;
+  background: url("../assets/ddone.jpeg");
+}
+img {
+  width: 300px;
+}

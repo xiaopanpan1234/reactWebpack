@@ -9,7 +9,7 @@ module.exports = smart(base, {
     hot: true,
   },
   plugins: [
-    new webpack.NamedModulesPlugin(), //打印跟新的模块路径
+    new webpack.NamedModulesPlugin(), //打印更新的模块路径
     new webpack.HotModuleReplacementPlugin(), //热更新插件
     new webpack.DefinePlugin({
       DEV: JSON.stringify("dev"),

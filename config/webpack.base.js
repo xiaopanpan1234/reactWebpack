@@ -92,6 +92,12 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"],
         // MiniCssExtractPlugin.loader 替换style-loader 使用link的方式加载到html中
+        // {
+        //  loader: 'style-loader',
+        //  options:{
+        //    insertAt:'top'
+        //  }
+        // }
         //style-loader 把css插入到head标签中
         //css-loader 解析@import这种语法的
         //"postcss-loader" 加浏览器前缀

@@ -1,13 +1,13 @@
 //26) 懒加载
-let buttom = document.createElement("button");
-buttom.innerHTML = "xiaopan";
-buttom.addEventListener("click", function () {
-  //es6 草案中的写法jsonp实现动态加载文件 需配合 @babel/plugin-syntax-dynamic-import 使用
-  import("./a").then((res) => {
-    console.log("res", res);
-  });
-});
-document.body.appendChild(buttom);
+// let buttom = document.createElement("button");
+// buttom.innerHTML = "xiaopan";
+// buttom.addEventListener("click", function () {
+//   //es6 草案中的写法jsonp实现动态加载文件 需配合 @babel/plugin-syntax-dynamic-import 使用
+//   import("./a").then((res) => {
+//     console.log("res", res);
+//   });
+// });
+// document.body.appendChild(buttom);
 
 //24）
 // import hanshu from "./a";
@@ -73,3 +73,5 @@ document.body.appendChild(buttom);
 //   console.log("23", target);
 // }
 // "bb".includes("b");
+
+import "./index.css";
